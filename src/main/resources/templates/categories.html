@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Electronics Categories</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<h1>Electronics Categories</h1>
+
+<!-- Add Category Form -->
+<form th:action="@{/el/add}" method="post">
+    <input type="text" name="name" placeholder="Category Name" required />
+    <label>
+        <input type="checkbox" name="available" checked />
+        Available
+    </label>
+    <button type="submit">Add</button>
+</form>
+
+<!-- Display Categories -->
+<h2>Category List</h2>
+<ul>
+    <li th:each="cat : ${categories}">
+        <span th:text="${cat.name}"></span>
+        <span th:text="${cat.available} ? 'Available' : 'Not Available'"></span>
+    </li>
+</ul>
+</body>
+</html>
