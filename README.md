@@ -1,3 +1,4 @@
+![Logo](hexagonal-architecture.png)
 📦 Electronics Management System – Hexagonal Architecture (Spring Boot + PostgreSQL)
 
 This project is a backend system for managing electronic categories (e.g., mobile, laptop, TV) using Spring Boot, PostgreSQL, JPA, and Flyway.
