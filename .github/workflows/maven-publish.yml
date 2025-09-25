@@ -20,19 +20,10 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Build with Maven
-        run: mvn clean install -DskipTests=false
-
-      - name: Run tests
-        run: mvn test
-        
-      - name: Test Docker image
-        run: docker run --rm your-image-name java -version
-
-      # - name: Build Docker image
-      #   run: docker build -t yourname/electronics-app .
-
-      # - name: Push Docker image
-      #   run: |
-      #     echo "${{ secrets.docker_pass }}" | docker login -u ${{ secrets.docker }} --password-stdin
-      #     docker push yourname/electronics-app
+      - name: Build and push docker image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with: 
+          image: emranisking/demoapp
+          registry: docker.io
+          username: ${{secrets.DOCKER_USER_NAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
