@@ -25,6 +25,9 @@ jobs:
 
       - name: Run tests
         run: mvn test
+        
+      - name: Test Docker image
+        run: docker run --rm your-image-name java -version
 
       # - name: Build Docker image
       #   run: docker build -t yourname/electronics-app .
