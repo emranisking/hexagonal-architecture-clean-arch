@@ -27,3 +27,6 @@ jobs:
           registry: docker.io
           username: ${{secrets.DOCKER_USER_NAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
+
+      - name: Run docker image
+        run: docker run --rm emranisking/demoapp:latest java -version
